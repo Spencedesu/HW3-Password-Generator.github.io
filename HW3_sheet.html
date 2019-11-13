@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+
+    <script type="text/javascript">
+        function generatePassword() {
+            var numChars = prompt("How many chars do you want?");
+            var symbWanted = confirm("Do you want special chars?");
+            var lowerWanted = confirm("Do you want lowercase chars?");
+            var upperWanted = confirm("Do you want uppercase chars?");
+            var numWanted = confirm("Do you want numbers?");
+
+            var lowerArr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+            var upperArr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+            var specialArr = ["!","@","#","$","%","&","*"];
+            var numArr = ["1","2","3","4","5","6","7","8","9","0"];
+
+            var finalPassword = "final placeholder";
+            var passwordDisplay = document.getElementById("password");
+            passwordDisplay.innerHTML = finalPassword;
+
+            var randomSpecialIndex = Math.floor(Math.random()* specialArr.length);
+            var randomSpecial = specialArr[randomSpecialIndex];
+
+            var randomLowerIndex = Math.floor( Math.random() * lowerArr.length );
+            var randomLower = lowerArr[randomLowerIndex];
+
+            var randomUpperIndex = Math.floor(Math.random()* upperArr.length );
+            var randomUpper = upperArr[randomUpperIndex];
+
+            var randomNumIndex = Math.floor(Math.random()* numArr.length);
+            var randomNum = numArr[randomNumIndex];
+
+
+
+            for (var i=0; i<numChars; i++) {
+                finalPassword = finalPassword + ""
+            
+          
+              }
+
+            console.log(randomLowerIndex + " = random lower index");
+            console.log(randomLower + " = random lower");
+            console.log(randomSpecialIndex + " random special characer");
+
+
+            console.log(numChars + " = password length");
+            console.log(symbWanted + " = special chars");
+            console.log(lowerWanted + " = lower chars");
+            console.log(upperWanted + " = upper chars");
+            console.log(numWanted + " = num chars");
+
+
+        }
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <h2>Generate a Password</h2>
+    <textarea
+      readonly
+      id="password"
+      placeholder="Your Secure Password"
+      aria-label="Generated Password"
+
+      ></textarea>
+    <button onclick="generatePassword();" id="generate">Generate Password</button>
+    <button id="copy">
+      Copy to Clipboard
+    </button>
+  </body>
+</html>
